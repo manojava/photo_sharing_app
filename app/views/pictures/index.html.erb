@@ -1,0 +1,26 @@
+<h1>Listing images</h1>
+<%= link_to 'New picture', new_picture_path %>		
+<table>
+   <tr>
+        <th>Image_Thumbnails</th>
+        <th>Name</th>
+        <th>Description</th>
+	<th>Place</th>
+	<th colspan="2"></th>
+   </tr>
+  <% @pictures.each do |picture| %>
+   <tr>
+	<td><%= image_tag(picture.image_url, :alt => "Image", :class=>"main") %></td> 
+	<td><%=picture.name%></td> 
+	<td><%=picture.description%></td>
+	<td><%=picture.place%></td>
+	<td><%=link_to 'Show', picture_path(picture)%></td>		          
+	<td><%=link_to 'Edit', edit_picture_path(picture) %></td>	
+	<td><%=link_to 'Destroy', picture_path(picture),		
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+   </tr> 
+ <%end%>
+</table> 
+
+<%= stylesheet_link_tag "pictures.scss" %>

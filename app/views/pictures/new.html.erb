@@ -1,0 +1,31 @@
+<h1>New Image</h1>
+
+<%= link_to 'Back', pictures_path %>
+
+
+<%= form_for(@picture, :html => { :multipart => true }) do |f| %>
+  <div class="field">
+    <%= f.label :filename, "Filename" %>
+    <%= f.file_field :image %>
+  </div>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+ <p>
+   <%= f.label :place %><br>
+   <%= f.text_field :place %>
+</p>
+
+  <div class="actions">
+    <%= f.submit "Post"%>
+  </div>
+<% end %>
+
+

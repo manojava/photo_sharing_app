@@ -1,0 +1,27 @@
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@picture.image_url, :alt => "Image", :class=>"new") %>		//displays uplaoded image
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%=@picture.name%>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%=@picture.description%>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%=@picture.place%>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |				//to edit the perticular picture  
+<%= link_to 'Back', pictures_path %> 						//back to all photos
+
+
+<%= stylesheet_link_tag "pictures.scss" %>					
+
+
