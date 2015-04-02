@@ -33,7 +33,8 @@ def create
 
 end
  
-def upload
+def update
+@picture = Picture.find(params[:id]) 
   if @picture.update(picture_params)
     redirect_to @picture
   else
