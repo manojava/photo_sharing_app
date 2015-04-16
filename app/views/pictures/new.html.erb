@@ -1,31 +1,42 @@
-<h1>New Image</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<%= link_to 'Back', pictures_path %>
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+<h3>New Image</h3>
+</head>
 
-
+<body>
+<p><h4> Select a file to upload</h4> 
 <%= form_for(@picture, :html => { :multipart => true }) do |f| %>
   <div class="field">
-    <%= f.label :filename, "Filename" %>
     <%= f.file_field :image %>
   </div>
-
-  <p>
+</p> 
+ <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder=>"name" %>
   </p>
 
   <p>
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :placeholder=>"description" %>
   </p>
  <p>
    <%= f.label :place %><br>
-   <%= f.text_field :place %>
+   <%= f.text_field :place, :placeholder=>"place" %>
 </p>
 
   <div class="actions">
-    <%= f.submit "Post"%>
-  </div>
+    <%= f.submit "Post", :class=>"btn btn-default" %></br></br> 
 <% end %>
 
+<a class="btn btn-default" href="/pictures" role="button">Back</a>
 
+<script src="../../dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>

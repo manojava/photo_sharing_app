@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
 <h1>Edit image</h1>
 
 <%= form_for @picture do |f| %>
@@ -21,6 +30,6 @@
 
 <% end %>
 
-
- 
-<%= link_to 'Back', pictures_path %>
+<a class="btn btn-default" href="/pictures" role="button">Back</a>
+<script src="../../dist/js/bootstrap.min.js"></script>
+</html>

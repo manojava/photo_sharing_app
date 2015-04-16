@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
 <p>
   <strong>Image:</strong>
   <%= image_tag(@picture.image_url, :alt => "Image", :class=>"new") %>		//displays uplaoded image
@@ -18,10 +27,10 @@
   <%=@picture.place%>
 </p>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |				//to edit the perticular picture  
-<%= link_to 'Back', pictures_path %> 						//back to all photos
-
+<a class="btn btn-default" href="/pictures/<%= @picture.id %>/edit" role="button">Edit</a>
+<a class="btn btn-default" href="/pictures" role="button">Back</a>
 
 <%= stylesheet_link_tag "pictures.scss" %>					
 
-
+<script src="../../dist/js/bootstrap.min.js"></script>
+</html>

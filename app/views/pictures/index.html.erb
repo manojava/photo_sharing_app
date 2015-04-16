@@ -1,5 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
 <h1>Listing images</h1>
-<%= link_to 'New picture', new_picture_path %>		
+<a class="btn btn-default" href="/pictures/new" role="button">New picture</a>
 <table>
    <tr>
         <th>Image_Thumbnails</th>
@@ -9,18 +18,19 @@
 	<th colspan="2"></th>
    </tr>
   <% @pictures.each do |picture| %>
-   <tr>
+   <tr class="info">
 	<td><%= image_tag(picture.image_url, :alt => "Image", :class=>"main") %></td> 
 	<td><%=picture.name%></td> 
 	<td><%=picture.description%></td>
 	<td><%=picture.place%></td>
-	<td><%=link_to 'Show', picture_path(picture)%></td>		          
-	<td><%=link_to 'Edit', edit_picture_path(picture) %></td>	
-	<td><%=link_to 'Destroy', picture_path(picture),		
+        <td><%=link_to 'Show', picture_path(picture), :class=>"btn btn-default"%></td>
+        <td><%=link_to 'Edit', edit_picture_path(picture), :class=>"btn btn-default"%></td>
+        <td><%=link_to 'Destroy', picture_path(picture), :class=>"btn btn-default",
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-   </tr> 
+              data: { confirm: 'Are you sure?' }%></td>
+   </tr>
  <%end%>
-</table> 
-
+</table>
 <%= stylesheet_link_tag "pictures.scss" %>
+<script src="../../dist/js/bootstrap.min.js"></script>
+</html> 
