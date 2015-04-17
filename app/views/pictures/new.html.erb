@@ -5,37 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link href="signin.css" rel="stylesheet">
 <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-<h3>New Image</h3>
+<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
 </head>
 
 <body>
-<p><h4> Select a file to upload</h4> 
-<%= form_for(@picture, :html => { :multipart => true }) do |f| %>
-  <div class="field">
-    <%= f.file_field :image %>
-  </div>
-</p> 
- <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, :placeholder=>"name" %>
-  </p>
+ <div class="jumbotron">
+<h1>New Image</h1>
+</div>
+<div class="container">
 
+<h3 class="form-signin-heading">Select a file to upload</h3>
+<%= form_for(@picture, :html => { :multipart => true }, :class=>"form-signin") do |f| %>
+  <div class="field">
+    <%= f.file_field :image %></br>
+  </div>
+<div class="form-group">
+ <p>
+<%= f.label :name %><br>
+<%= f.text_field :name, :id=>"inputEmail", :class=>"form-control", :placeholder=>"name" %>
+  </p>
+</div>
+<div class="form-group">
   <p>
     <%= f.label :description %><br>
-    <%= f.text_area :description, :placeholder=>"description" %>
+    <%= f.text_area :description, :id=>"inputEmail", :class=>"form-control", :placeholder=>"description" %>
   </p>
+</div>
+<div class="form-group">
  <p>
    <%= f.label :place %><br>
-   <%= f.text_field :place, :placeholder=>"place" %>
+   <%= f.text_field :place, :placeholder=>"place", :id=>"inputEmail", :class=>"form-control" %>
 </p>
-
+</div>
   <div class="actions">
-    <%= f.submit "Post", :class=>"btn btn-default" %></br></br> 
+    <%= f.submit "Post", :class=>"btn btn-lg btn-primary" %></br</br></br></br>
 <% end %>
+</div>
+<a class="btn btn-warning" href="/pictures" role="button">Back</a>
 
-<a class="btn btn-default" href="/pictures" role="button">Back</a>
-
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 <script src="../../dist/js/bootstrap.min.js"></script>
 
 </body>

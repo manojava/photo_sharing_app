@@ -7,29 +7,34 @@
 
 <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
+<div class="jumbotron">
 <h1>Edit image</h1>
-
+</div>
+<div class="container">
 <%= form_for @picture do |f| %>
-
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="form-group">
+ <p>
+<%= f.label :name %><br>
+<%= f.text_field :name, :id=>"inputEmail", :class=>"form-control", :placeholder=>"name" %>
   </p>
-
-  <p>
+</div>
+<div class="form-group">
+ <p>
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :id=>"inputEmail", :class=>"form-control", :placeholder=>"description" %>
   </p>
+</div>
+<div class="form-group">
  <p>
    <%= f.label :place %><br>
-   <%= f.text_field :place %>
+   <%= f.text_field :place, :placeholder=>"place", :id=>"inputEmail", :class=>"form-control" %>
 </p>
-  <p>
-    <%= f.submit %>
-  </p>
-
+</div>
+  <div class="actions">
+    <%= f.submit "Submit", :class=>"btn btn-lg btn-primary" %></br></br> 
+</div>
 <% end %>
-
-<a class="btn btn-default" href="/pictures" role="button">Back</a>
+<a class="btn btn-warning" href="/pictures" role="button">Back</a>
+</div>
 <script src="../../dist/js/bootstrap.min.js"></script>
 </html>

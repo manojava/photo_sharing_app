@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
+<div class="page-header">
+ <div class="alert alert-success" role="alert">
+        <strong>Well done!</strong> You successfully uploaded image.
+      </div>
 <p>
   <strong>Image:</strong>
-  <%= image_tag(@picture.image_url, :alt => "Image", :class=>"new") %>		//displays uplaoded image
+</div> 
+ <%= image_tag(@picture.image_url, :alt => "A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera", :class=>"new", data: { src: "holder.js/200x200" } ) %>
 </p>
-
+<div class="jumbotron">
 <p>
   <strong>Name:</strong>
   <%=@picture.name%>
@@ -27,9 +31,9 @@
   <%=@picture.place%>
 </p>
 
-<a class="btn btn-default" href="/pictures/<%= @picture.id %>/edit" role="button">Edit</a>
-<a class="btn btn-default" href="/pictures" role="button">Back</a>
-
+<a class="btn btn-primary" href="/pictures/<%= @picture.id %>/edit" role="button">Edit</a>
+<a class="btn btn-warning" href="/pictures" role="button">Back</a>
+</div>
 <%= stylesheet_link_tag "pictures.scss" %>					
 
 <script src="../../dist/js/bootstrap.min.js"></script>
